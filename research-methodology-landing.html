@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Methodology Support for PhD Scholars | PhD Research Lab</title>
+<meta name="description" content="Choose your research design, sample and data collection approach, and justify each choice to your committee. One-to-one mentoring from a subject mentor.">
+<link rel="canonical" href="https://www.phdassistance.com/services/phd-research-methodology/">
+<meta property="og:title" content="Research Methodology Support for PhD Scholars | PhD Research Lab">
+<meta property="og:description" content="Choose your research design, sample and data collection approach, and justify each choice to your committee.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..600&display=swap" rel="stylesheet">
+
+<style>
+  /* ------------------------------------------------------------
+     Design tokens
+     paper / ink: page and text
+     night: the sampling field panel and contact block
+     a, b, c: the three groups in the sampling field
+     ------------------------------------------------------------ */
+  :root{
+    --paper:#F2F5F4;
+    --paper-2:#E3EAE9;
+    --ink:#14233A;
+    --muted:#4B5B70;
+    --line:#C5D0D3;
+    --teal:#0C7C74;
+    --teal-d:#095F59;
+    --night:#0F1E33;
+    --night-2:#192C46;
+    --a:#47D6C8;
+    --b:#86A9FF;
+    --c:#FFC857;
+    --display:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+    --body:"Literata",Georgia,"Times New Roman",serif;
+    --pad:clamp(1.25rem,4vw,3rem);
+    --max:1200px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:5.5rem}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--body);font-size:1.0625rem;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.015em}
+  p{margin:0 0 1em}
+  :focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+  .on-dark :focus-visible,.panel :focus-visible{outline-color:var(--c)}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:100}
+  .skip:focus{left:1rem;top:1rem}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+    padding:.8rem 1.4rem;border-radius:999px;border:2px solid transparent;
+    font-family:var(--display);font-weight:600;font-size:1rem;line-height:1.2;
+    text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s;
+  }
+  .btn-primary{background:var(--teal);color:#fff}
+  .btn-primary:hover{background:var(--teal-d)}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn-light{background:#fff;color:var(--night)}
+  .btn-light:hover{background:var(--c)}
+
+  /* ---------- header ---------- */
+  .top{
+    position:sticky;top:0;z-index:50;
+    background:rgba(242,245,244,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4.25rem}
+  .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+  .brand svg{width:34px;height:34px}
+  .brand-name{font-family:var(--display);font-weight:700;font-size:1.15rem;line-height:1.1;letter-spacing:-.01em}
+  .brand-sub{display:block;font-family:var(--body);font-weight:400;font-size:.78rem;color:var(--muted);letter-spacing:0}
+  .nav{display:flex;align-items:center;gap:1.75rem}
+  .nav a.link{font-family:var(--display);font-weight:500;text-decoration:none;font-size:.98rem}
+  .nav a.link:hover{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+  .top .btn{padding:.6rem 1.1rem;font-size:.95rem}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(2.5rem,6vw,5rem) 0 clamp(3rem,6vw,5rem)}
+  .hero .wrap{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.18fr);
+    gap:clamp(2rem,5vw,4.5rem);align-items:center;
+  }
+  .crumbs{font-size:.9rem;color:var(--muted);margin-bottom:1.5rem}
+  .crumbs a{text-decoration:none}
+  .crumbs a:hover{text-decoration:underline}
+  .hero h1{
+    font-weight:700;font-stretch:88%;
+    font-size:clamp(2.35rem,5.1vw,4.2rem);line-height:1.02;letter-spacing:-.025em;
+    margin-bottom:1.4rem;
+  }
+  .hero .lede{font-size:1.2rem;max-width:36rem;color:var(--ink)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.8rem 0 2rem}
+  .assure{
+    border-top:1px solid var(--line);padding-top:1.1rem;margin:0;
+    font-size:.98rem;color:var(--muted);max-width:34rem;
+  }
+
+  /* ---------- sampling field ---------- */
+  .panel{
+    background:var(--night);color:#DCE6F2;border-radius:16px;
+    padding:clamp(1rem,2.4vw,1.5rem);
+    box-shadow:0 24px 50px -28px rgba(15,30,51,.7);
+  }
+  .panel h2{font-size:1.25rem;font-weight:650;color:#fff;margin-bottom:.25rem}
+  .panel .hint{font-size:.95rem;color:#AFC0D6;margin-bottom:1rem}
+  .methods{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+  .methods button{
+    font-family:var(--display);font-weight:500;font-size:.9rem;
+    background:transparent;color:#DCE6F2;
+    border:1px solid rgba(255,255,255,.28);border-radius:999px;
+    padding:.4rem .85rem;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s;
+  }
+  .methods button:hover{border-color:#fff}
+  .methods button[aria-pressed="true"]{background:#fff;color:var(--night);border-color:#fff}
+
+  .controls{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.6rem}
+  .controls label{font-family:var(--display);font-weight:500;font-size:.92rem;display:flex;align-items:center;gap:.7rem}
+  .controls input[type=range]{width:min(190px,40vw);accent-color:var(--a)}
+  .readout{font-family:var(--display);font-weight:600;color:#fff;font-variant-numeric:tabular-nums;min-width:11.5ch}
+  .redraw{
+    margin-left:auto;font-family:var(--display);font-weight:500;font-size:.88rem;
+    background:transparent;color:#DCE6F2;border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;padding:.35rem .85rem;cursor:pointer;
+  }
+  .redraw:hover:not(:disabled){border-color:#fff}
+  .redraw:disabled{opacity:.35;cursor:not-allowed}
+
+  #field{width:100%;height:auto;background:var(--night-2);border-radius:10px}
+  .dot{
+    opacity:.26;transform-box:fill-box;transform-origin:center;
+    transition:opacity .35s ease,transform .35s ease;
+  }
+  .dot.s0{fill:var(--a)} .dot.s1{fill:var(--b)} .dot.s2{fill:var(--c)}
+  .dot.on{opacity:1;transform:scale(1.6)}
+  .dot.on.ring{stroke:#fff;stroke-width:1.6}
+  .cl{fill:none;stroke:#fff;stroke-opacity:.14;stroke-dasharray:4 5;transition:fill .3s,stroke-opacity .3s}
+  .cl.on{fill:rgba(255,255,255,.08);stroke-opacity:.75;stroke-dasharray:none}
+  #clusters,#you{opacity:0;transition:opacity .3s}
+  .show-clusters #clusters,.show-you #you{opacity:1}
+  #you text{fill:#DCE6F2;font:500 12px var(--display)}
+  #you circle{fill:none;stroke:#fff;stroke-dasharray:3 3}
+
+  .compare{margin:1rem 0 .4rem;display:grid;grid-template-columns:5.6rem 1fr;gap:.45rem .8rem;align-items:center}
+  .compare .lab{font-family:var(--display);font-size:.88rem;font-weight:500;color:#AFC0D6}
+  .bar{display:flex;height:1.55rem;border-radius:5px;overflow:hidden;background:rgba(255,255,255,.08)}
+  .bar span{
+    display:flex;align-items:center;justify-content:center;
+    font:600 .75rem var(--display);color:var(--night);overflow:hidden;white-space:nowrap;
+    transition:width .45s ease;
+  }
+  .bar span:nth-child(1){background:var(--a)}
+  .bar span:nth-child(2){background:var(--b)}
+  .bar span:nth-child(3){background:var(--c)}
+  .legend{display:flex;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:#AFC0D6;margin:.3rem 0 .8rem}
+  .legend i{display:inline-block;width:.65rem;height:.65rem;border-radius:50%;margin-right:.35rem}
+  .insight{font-family:var(--display);font-weight:600;color:#fff;margin:0 0 .9rem;min-height:1.6em}
+  .caption{border-top:1px solid rgba(255,255,255,.14);padding-top:.9rem;font-size:.95rem;line-height:1.55}
+  .caption h3{font-size:1.05rem;color:#fff;font-weight:650;margin-bottom:.3rem}
+  .caption p{margin:0 0 .35rem}
+  .caption b{font-family:var(--display);font-weight:600;color:#fff}
+
+  /* ---------- the methods chapter outline ---------- */
+  .outline{padding:clamp(3rem,7vw,6rem) 0;border-top:1px solid var(--line)}
+  .outline .wrap{
+    display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
+    gap:clamp(2rem,6vw,5rem);
+  }
+  .outline-intro{position:sticky;top:6rem;align-self:start}
+  .outline h2,.how h2,.subjects h2{
+    font-weight:700;font-stretch:90%;font-size:clamp(1.9rem,3.6vw,2.9rem);
+    line-height:1.08;letter-spacing:-.02em;margin-bottom:1rem;
+  }
+  .outline-intro p{color:var(--muted);max-width:30rem}
+  .outline-links{display:flex;flex-direction:column;gap:.55rem;margin-top:1.4rem;align-items:flex-start}
+  .outline-links a{font-family:var(--display);font-weight:500}
+  .outline-links a.btn{font-weight:600}
+
+  details.sec{border-top:1.5px solid var(--ink)}
+  details.sec:last-of-type{border-bottom:1.5px solid var(--ink)}
+  details.sec summary{
+    display:grid;grid-template-columns:3.4rem 1fr 1.5rem;gap:.5rem;align-items:baseline;
+    padding:1.2rem 0;cursor:pointer;list-style:none;
+  }
+  details.sec summary::-webkit-details-marker{display:none}
+  details.sec summary::after{
+    content:"+";justify-self:end;font-family:var(--display);font-weight:400;
+    font-size:1.7rem;line-height:1;transition:transform .25s;
+  }
+  details.sec[open] summary::after{transform:rotate(45deg)}
+  details.sec summary:hover .sec-title{color:var(--teal)}
+  .sec-no{font-family:var(--display);font-weight:600;color:var(--teal);font-variant-numeric:tabular-nums}
+  .sec-title{
+    font-family:var(--display);font-weight:650;font-size:clamp(1.25rem,2.3vw,1.7rem);
+    letter-spacing:-.012em;line-height:1.15;transition:color .2s;
+  }
+  .sec-body{padding:0 0 1.6rem 3.9rem;max-width:36rem}
+  .ask{
+    font-style:italic;font-size:1.12rem;line-height:1.5;
+    border-left:3px solid var(--teal);padding-left:1rem;margin-bottom:1rem;
+  }
+  .sec-body p.desc{color:var(--muted)}
+  .sec-body a{font-family:var(--display);font-weight:600;color:var(--teal);text-underline-offset:4px}
+  .sec-body a:hover{color:var(--teal-d)}
+
+  /* ---------- how it works ---------- */
+  .how{background:var(--paper-2);padding:clamp(3rem,7vw,6rem) 0}
+  .how h2{max-width:20ch}
+  .steps{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
+    margin:2.5rem 0 2.5rem;
+  }
+  .step{padding:0 clamp(1rem,2.5vw,2rem) 0 0}
+  .step + .step{border-left:1px solid var(--ink);padding-left:clamp(1rem,2.5vw,2rem)}
+  .step-no{font-family:var(--display);font-weight:700;font-size:2.6rem;line-height:1;color:var(--teal);margin-bottom:.8rem}
+  .step h3{font-size:1.3rem;font-weight:650;margin-bottom:.5rem;line-height:1.2}
+  .step p{color:var(--muted);margin:0;max-width:26rem}
+  .author-note{
+    font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,2vw,1.5rem);
+    letter-spacing:-.01em;line-height:1.3;max-width:42rem;margin:0;
+    border-top:1.5px solid var(--ink);padding-top:1.3rem;
+  }
+
+  /* ---------- subjects ---------- */
+  .subjects{padding:clamp(3rem,7vw,6rem) 0}
+  .subjects .intro{max-width:40rem;margin-bottom:2.2rem}
+  .subjects .intro p{color:var(--muted)}
+  .subject-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.8rem 2rem;
+  }
+  .subject-grid h3{
+    font-size:1.05rem;font-weight:650;margin-bottom:.6rem;
+    padding-bottom:.5rem;border-bottom:1px solid var(--ink);
+  }
+  .subject-grid ul{list-style:none;margin:0;padding:0}
+  .subject-grid li{margin:.3rem 0}
+  .subject-grid a{text-decoration:none;font-size:.98rem}
+  .subject-grid a:hover{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
+  .explore{
+    margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;align-items:baseline;
+  }
+  .explore strong{font-family:var(--display);font-weight:650}
+  .explore a{font-family:var(--display);font-weight:500;text-underline-offset:4px}
+  .explore a:hover{color:var(--teal)}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--night);color:#DCE6F2;padding:clamp(3rem,7vw,6rem) 0}
+  .contact .wrap{
+    display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);
+    gap:clamp(2rem,6vw,5rem);align-items:start;
+  }
+  .contact h2{color:#fff;font-weight:700;font-stretch:90%;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:1rem}
+  .contact .sub{max-width:28rem;color:#B9C8DC}
+  .reach{list-style:none;margin:1.8rem 0 1.6rem;padding:0;display:grid;gap:.7rem}
+  .reach li{display:grid;grid-template-columns:5.2rem 1fr;gap:.6rem;font-size:.98rem}
+  .reach span{font-family:var(--display);font-weight:500;color:#8FA3BE}
+  .reach a{text-decoration:none;color:#fff}
+  .reach a:hover{text-decoration:underline;text-underline-offset:4px}
+
+  form.req{background:var(--paper);color:var(--ink);border-radius:16px;padding:clamp(1.25rem,3vw,2rem)}
+  form.req h3{font-size:1.3rem;font-weight:650;margin-bottom:1.2rem}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem}
+  .field label{font-family:var(--display);font-weight:600;font-size:.92rem}
+  .field label small{font-weight:400;color:var(--muted)}
+  .field input,.field select,.field textarea{
+    font:inherit;font-size:1rem;color:var(--ink);background:#fff;
+    border:1px solid #9BAAB0;border-radius:6px;padding:.65rem .75rem;width:100%;
+  }
+  .field textarea{min-height:7.5rem;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
+  .consent{display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--muted);margin:.3rem 0 1.3rem}
+  .consent input{margin-top:.3rem;width:1.1rem;height:1.1rem;accent-color:var(--teal);flex:none}
+  .form-actions{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+  .form-status{font-size:.92rem;margin:1rem 0 0;color:var(--teal-d);min-height:1.4em}
+  .form-note{font-size:.85rem;color:var(--muted);margin:.8rem 0 0}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--night);color:#9FB1C8;border-top:1px solid rgba(255,255,255,.12);padding:2.5rem 0 3rem;font-size:.92rem}
+  footer .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,3fr);gap:2rem}
+  footer strong{display:block;font-family:var(--display);font-weight:600;color:#fff;margin-bottom:.6rem}
+  footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+  footer a{text-decoration:none}
+  footer a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+  footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:1.2rem;font-size:.85rem}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:960px){
+    .hero .wrap,.outline .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+    .outline-intro{position:static}
+    .nav a.link{display:none}
+    footer .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+    footer .wrap > :first-child{grid-column:1/-1}
+  }
+  @media (max-width:720px){
+    .steps{grid-template-columns:minmax(0,1fr);gap:1.8rem}
+    .step + .step{border-left:0;border-top:1px solid var(--ink);padding-left:0;padding-top:1.5rem}
+    .grid2{grid-template-columns:minmax(0,1fr)}
+    .sec-body{padding-left:0}
+    details.sec summary{grid-template-columns:2.8rem 1fr 1.5rem}
+    .brand-sub{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://www.phdassistance.com/" aria-label="PhD Research Lab by PhD Assistance, home">
+      <svg viewBox="0 0 34 34" aria-hidden="true">
+        <rect width="34" height="34" rx="8" fill="#14233A"/>
+        <g>
+          <circle cx="9" cy="9" r="2.6" fill="#47D6C8"/><circle cx="17" cy="9" r="2.6" fill="#47D6C8" opacity=".3"/><circle cx="25" cy="9" r="2.6" fill="#86A9FF" opacity=".3"/>
+          <circle cx="9" cy="17" r="2.6" fill="#47D6C8" opacity=".3"/><circle cx="17" cy="17" r="2.6" fill="#86A9FF"/><circle cx="25" cy="17" r="2.6" fill="#FFC857" opacity=".3"/>
+          <circle cx="9" cy="25" r="2.6" fill="#47D6C8" opacity=".3"/><circle cx="17" cy="25" r="2.6" fill="#86A9FF" opacity=".3"/><circle cx="25" cy="25" r="2.6" fill="#FFC857"/>
+        </g>
+      </svg>
+      <span class="brand-name">PhD Research Lab<span class="brand-sub">by PhD Assistance</span></span>
+    </a>
+    <nav class="nav" aria-label="Page sections">
+      <a class="link" href="#services">Support</a>
+      <a class="link" href="#how">How it works</a>
+      <a class="link" href="#subjects">Subjects</a>
+      <a class="link" href="https://www.phdassistance.com/pricing/">Pricing</a>
+      <a class="btn btn-primary" href="#contact">Talk to a mentor</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="crumbs">
+          <a href="https://www.phdassistance.com/">Home</a> / <a href="https://www.phdassistance.com/services/">Research support</a> / Research methodology support
+        </p>
+        <h1>Defend every methods choice before your committee asks.</h1>
+        <p class="lede">
+          Choose your research design, sample and data collection approach, and justify each choice. One-to-one mentoring from a subject mentor who holds a doctorate in your field.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Request a free consultation</a>
+          <a class="btn btn-ghost" href="#services">See what we cover</a>
+        </div>
+        <p class="assure">You make the decisions and carry out the study. Your mentor guides, reviews and helps you explain why each choice is sound.</p>
+      </div>
+
+      <!-- The sampling field: the one interactive moment on the page -->
+      <div class="panel" id="panel">
+        <h2>Who ends up in your study?</h2>
+        <p class="hint">160 people, three groups. Pick a sampling method and see who gets drawn.</p>
+
+        <div class="methods" id="methodBtns" role="group" aria-label="Sampling method"></div>
+
+        <div class="controls">
+          <label for="nRange">Sample size
+            <input type="range" id="nRange" min="8" max="60" step="2" value="24">
+          </label>
+          <span class="readout" id="readout" aria-live="polite"></span>
+          <button type="button" class="redraw" id="redraw">Draw again</button>
+        </div>
+
+        <svg id="field" viewBox="0 0 640 420" role="img"
+             aria-label="160 dots standing for a study population in three colour groups. Dots that join your sample light up.">
+          <g id="clusters"></g>
+          <g id="dots"></g>
+          <g id="you"><circle cx="22" cy="392" r="16"/><text x="46" y="412">you start here</text></g>
+        </svg>
+
+        <div class="compare" aria-hidden="true">
+          <span class="lab">Population</span><div class="bar" id="barPop"></div>
+          <span class="lab">Your sample</span><div class="bar" id="barSample"></div>
+        </div>
+        <div class="legend">
+          <span><i style="background:var(--a)"></i>Group A</span>
+          <span><i style="background:var(--b)"></i>Group B</span>
+          <span><i style="background:var(--c)"></i>Group C</span>
+        </div>
+        <p class="insight" id="insight" aria-live="polite"></p>
+        <div class="caption" id="caption" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES AS A METHODS CHAPTER ===================== -->
+  <section class="outline" id="services">
+    <div class="wrap">
+      <div class="outline-intro">
+        <h2>What your methods chapter has to settle</h2>
+        <p>Each section below is a decision your committee will question. A mentor helps you make it, justify it and write it down.</p>
+        <div class="outline-links">
+          <a class="btn btn-primary" href="https://www.phdassistance.com/contact-us/">Request a free consultation</a>
+          <a href="https://www.phdassistance.com/pricing/">See pricing for every service</a>
+          <a href="https://www.phdassistance.com/faq/">Read frequently asked questions</a>
+        </div>
+      </div>
+
+      <div>
+        <details class="sec" name="methods" open>
+          <summary><span class="sec-no">3.1</span><span class="sec-title">Research design</span></summary>
+          <div class="sec-body">
+            <p class="ask">Your committee asks: “Why this design, and not another one?”</p>
+            <p class="desc">Mentoring to choose, justify and structure the research design that best answers your research questions.</p>
+            <a href="https://www.phdassistance.com/services/phd-research-methodology/research-design/">Explore research design support</a>
+          </div>
+        </details>
+
+        <details class="sec" name="methods">
+          <summary><span class="sec-no">3.2</span><span class="sec-title">Quantitative methodology</span></summary>
+          <div class="sec-body">
+            <p class="ask">Your committee asks: “Which tests fit your data, and have you met their assumptions?”</p>
+            <p class="desc">Mentoring to design, justify, analyse and report the quantitative methodology of your PhD.</p>
+            <a href="https://www.phdassistance.com/services/phd-research-methodology/quantitative-methodology/">Explore quantitative methodology support</a>
+          </div>
+        </details>
+
+        <details class="sec" name="methods">
+          <summary><span class="sec-no">3.3</span><span class="sec-title">Qualitative methodology</span></summary>
+          <div class="sec-body">
+            <p class="ask">Your committee asks: “How will we know your interpretation can be trusted?”</p>
+            <p class="desc">Mentoring to design, justify and carry out a rigorous qualitative study for your thesis or journal manuscript.</p>
+            <a href="https://www.phdassistance.com/services/phd-research-methodology/qualitative-methodology/">Explore qualitative methodology support</a>
+          </div>
+        </details>
+
+        <details class="sec" name="methods">
+          <summary><span class="sec-no">3.4</span><span class="sec-title">Sampling</span></summary>
+          <div class="sec-body">
+            <p class="ask">Your committee asks: “Who is in your sample, and why them?”</p>
+            <p class="desc">Mentoring to choose, justify and document a sampling strategy that fits your research question and design.</p>
+            <a href="https://www.phdassistance.com/services/phd-research-methodology/sampling/">Explore sampling support</a>
+          </div>
+        </details>
+
+        <details class="sec" name="methods">
+          <summary><span class="sec-no">3.5</span><span class="sec-title">Sample size</span></summary>
+          <div class="sec-body">
+            <p class="ask">Your committee asks: “Where does your number come from?”</p>
+            <p class="desc">Mentoring to calculate, justify and report a defensible sample size for your study.</p>
+            <a href="https://www.phdassistance.com/services/phd-research-methodology/sample-size/">Explore sample size support</a>
+          </div>
+        </details>
+
+        <details class="sec" name="methods">
+          <summary><span class="sec-no">3.6</span><span class="sec-title">Power calculation</span></summary>
+          <div class="sec-body">
+            <p class="ask">Your committee asks: “Could your study detect the effect you expect?”</p>
+            <p class="desc">Mentoring to plan and justify a sample size that gives your study a fair chance of detecting the effect it is looking for.</p>
+            <a href="https://www.phdassistance.com/services/phd-research-methodology/power-calculation/">Explore power calculation support</a>
+          </div>
+        </details>
+
+        <details class="sec" name="methods">
+          <summary><span class="sec-no">3.7</span><span class="sec-title">Primary data collection</span></summary>
+          <div class="sec-body">
+            <p class="ask">Your committee asks: “How did you collect this, and was it ethical and reliable?”</p>
+            <p class="desc">Mentoring to plan, design and document ethical, reliable primary data collection that you carry out yourself.</p>
+            <a href="https://www.phdassistance.com/services/phd-research-methodology/primary-data-collection/">Explore primary data collection support</a>
+          </div>
+        </details>
+
+        <details class="sec" name="methods">
+          <summary><span class="sec-no">3.8</span><span class="sec-title">Secondary data collection</span></summary>
+          <div class="sec-body">
+            <p class="ask">Your committee asks: “Where did this data come from, and does it fit your question?”</p>
+            <p class="desc">Mentoring to find, assess and document the existing data your PhD will analyse.</p>
+            <a href="https://www.phdassistance.com/services/phd-research-methodology/secondary-data-collection/">Explore secondary data collection support</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="how" id="how">
+    <div class="wrap">
+      <h2>You make every decision. A mentor helps you defend it.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-no">1</div>
+          <h3>Tell us what you are working on</h3>
+          <p>Share your stage, your subject and what you have so far: a draft, an abstract or your university’s guidelines.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">2</div>
+          <h3>Meet a mentor from your subject</h3>
+          <p>Every mentor holds a doctorate in their field. Your mentor reads your work and talks through the options with you.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">3</div>
+          <h3>Decide, justify and write it yourself</h3>
+          <p>You choose the design, the sample and the data collection approach. Your mentor reviews your reasoning until you can explain it.</p>
+        </div>
+      </div>
+
+      <p class="author-note">PhD Assistance mentors, reviews and edits. You remain the author of your work.</p>
+    </div>
+  </section>
+
+  <!-- ===================== SUBJECTS ===================== -->
+  <section class="subjects" id="subjects">
+    <div class="wrap">
+      <div class="intro">
+        <h2>Find a mentor in your subject</h2>
+        <p>Mentors work in 200+ subject areas, grouped the way universities organise their schools. Methods differ between a nursing thesis and a finance thesis, so your mentor should know yours.</p>
+      </div>
+
+      <div class="subject-grid">
+        <div>
+          <h3>Business and economics</h3>
+          <ul>
+            <li><a href="https://www.phdassistance.com/industries/business-management/">Business and management</a></li>
+            <li><a href="https://www.phdassistance.com/industries/economics-finance-academic/">Economics and finance</a></li>
+            <li><a href="https://www.phdassistance.com/industries/human-resource-management/">Human resource management</a></li>
+            <li><a href="https://www.phdassistance.com/industries/supply-chain/">Supply chain</a></li>
+            <li><a href="https://www.phdassistance.com/industries/accounting/">Accounting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Health and life sciences</h3>
+          <ul>
+            <li><a href="https://www.phdassistance.com/industries/medicine-healthcare/">Medicine and healthcare</a></li>
+            <li><a href="https://www.phdassistance.com/industries/nursing/">Nursing</a></li>
+            <li><a href="https://www.phdassistance.com/industries/public-health/">Public health</a></li>
+            <li><a href="https://www.phdassistance.com/industries/biological-life-science/">Biological and life sciences</a></li>
+            <li><a href="https://www.phdassistance.com/industries/biochemistry/">Biochemistry</a></li>
+            <li><a href="https://www.phdassistance.com/industries/food-science/">Food science</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Engineering and computing</h3>
+          <ul>
+            <li><a href="https://www.phdassistance.com/industries/engineering-technology/">Engineering and technology</a></li>
+            <li><a href="https://www.phdassistance.com/industries/computer-science-information/">Computer science and IT</a></li>
+            <li><a href="https://www.phdassistance.com/industries/data-science-ai/">Data science and AI</a></li>
+            <li><a href="https://www.phdassistance.com/industries/cybersecurity/">Cybersecurity</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Natural and environmental sciences</h3>
+          <ul>
+            <li><a href="https://www.phdassistance.com/industries/physics/">Physics</a></li>
+            <li><a href="https://www.phdassistance.com/industries/chemistry/">Chemistry</a></li>
+            <li><a href="https://www.phdassistance.com/industries/geology/">Geology</a></li>
+            <li><a href="https://www.phdassistance.com/industries/environmental-science/">Environmental science</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Social sciences, humanities and law</h3>
+          <ul>
+            <li><a href="https://www.phdassistance.com/industries/psychology/">Psychology</a></li>
+            <li><a href="https://www.phdassistance.com/industries/sociology/">Sociology</a></li>
+            <li><a href="https://www.phdassistance.com/industries/education/">Education</a></li>
+            <li><a href="https://www.phdassistance.com/industries/arts-humanities/">Arts and humanities</a></li>
+            <li><a href="https://www.phdassistance.com/industries/academic-law-writing/">Law</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="explore">
+        <strong>Keep exploring</strong>
+        <a href="https://www.phdassistance.com/industries/">Browse all 200+ subjects</a>
+        <a href="https://www.phdassistance.com/services/courses/research-methodology/">Research Methodology course</a>
+        <a href="https://www.phdassistance.com/services/courses/academic-statistics/">Academic Statistics course</a>
+        <a href="https://www.phdassistance.com/services/phd-data-analysis/">Data analysis and AI</a>
+        <a href="https://www.phdassistance.com/insights/regulations-and-policy/research-ethics-approval/">Research ethics approval</a>
+        <a href="https://www.phdassistance.com/sample-work/">Sample work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact on-dark" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Tell us what you are working on</h2>
+        <p class="sub">Request a free consultation and tell us about your study. We will match you with a mentor from your subject.</p>
+
+        <ul class="reach">
+          <li><span>WhatsApp</span><a href="https://wa.me/919176966446">+91 91769 66446</a></li>
+          <li><span>Email</span><a href="mailto:support@phdassistance.com">support@phdassistance.com</a></li>
+          <li><span>UK</span><a href="tel:+441143520021">+44 114 352 0021</a></li>
+          <li><span>India</span><a href="tel:+919176966446">+91 91769 66446</a></li>
+          <li><span>Landline</span><a href="tel:+914442124284">+91 44 4212 4284</a> (9:00 to 18:00 IST)</li>
+        </ul>
+        <a class="btn btn-light" href="https://api.whatsapp.com/send/?phone=919176966446&text&type=phone_number&app_absent=0">Prefer WhatsApp? Message us</a>
+      </div>
+
+      <form class="req" id="reqForm" novalidate>
+        <h3>Request a free consultation</h3>
+
+        <div class="grid2">
+          <div class="field">
+            <label for="f-name">Full name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label for="f-phone">Phone or WhatsApp</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="f-country">Country</label>
+            <select id="f-country" name="country" autocomplete="country-name">
+              <option value="">Choose your country</option>
+              <option>India</option><option>United Arab Emirates</option><option>Saudi Arabia</option><option>Qatar</option>
+              <option>Oman</option><option>Kuwait</option><option>Bahrain</option><option>United Kingdom</option>
+              <option>Australia</option><option>New Zealand</option><option>Canada</option><option>United States</option>
+              <option>Germany</option><option>Netherlands</option><option>France</option><option>Spain</option>
+              <option>Italy</option><option>Sweden</option><option>Malaysia</option><option>Singapore</option>
+              <option>Indonesia</option><option>China</option><option>Japan</option><option>South Korea</option>
+              <option>Türkiye</option><option>Egypt</option><option>Kenya</option><option>Nigeria</option>
+              <option>South Africa</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label for="f-stage">Your stage</label>
+            <select id="f-stage" name="stage">
+              <option value="">Choose your stage</option>
+              <option>Master’s student</option>
+              <option>PhD: first year</option>
+              <option>PhD: middle years</option>
+              <option>PhD: final year or writing up</option>
+              <option>Postdoc or early-career researcher</option>
+              <option>Faculty or supervisor</option>
+              <option>Applying for a PhD</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-subject">Subject</label>
+            <select id="f-subject" name="subject">
+              <option value="">Choose your subject</option>
+              <option>Business and management</option>
+              <option>Medicine and healthcare</option>
+              <option>Biological and life sciences</option>
+              <option>Engineering and technology</option>
+              <option>Computer science and IT</option>
+              <option>Economics and finance</option>
+              <option>Environmental science</option>
+              <option>Education</option>
+              <option>Psychology</option>
+              <option>Social sciences</option>
+              <option>Arts and humanities</option>
+              <option>Law</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-need">What do you need help with?</label>
+          <select id="f-need" name="need">
+            <option value="">Choose a methodology area</option>
+            <option>Research design</option>
+            <option>Quantitative methodology</option>
+            <option>Qualitative methodology</option>
+            <option>Sampling</option>
+            <option>Sample size</option>
+            <option>Power calculation</option>
+            <option>Primary data collection</option>
+            <option>Secondary data collection</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-work">Tell us about your work</label>
+          <textarea id="f-work" name="work" required placeholder="Your research question, what you have decided so far and where you are stuck."></textarea>
+        </div>
+
+        <label class="consent" for="f-consent">
+          <input type="checkbox" id="f-consent" name="consent" required>
+          <span>I agree to be contacted about this request and to the <a href="https://www.phdassistance.com/privacy-policy/">privacy policy</a>. I understand PhD Assistance mentors, reviews and edits, and that I remain the author of my work.</span>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send my request</button>
+          <a class="btn btn-ghost" href="https://api.whatsapp.com/send/?phone=919176966446&text&type=phone_number&app_absent=0">Prefer WhatsApp?</a>
+        </div>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="form-note">Your email app opens with the request filled in. Attach your draft, abstract or guidelines to that email.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>PhD Research Lab, by PhD Assistance</strong>
+      <p style="max-width:30rem;margin:0 0 1rem">An external mentor that helps you shape an idea into a research model, and see it through to publication.</p>
+      <p style="margin:0">Offices: 10 Park Place, Manchester M4 4EY; 10 Kutty Street, Nungambakkam, Chennai 600 034</p>
+    </div>
+    <div>
+      <strong>Research support</strong>
+      <ul>
+        <li><a href="https://www.phdassistance.com/services/phd-dissertation/phd-topic-selection/">Topic selection</a></li>
+        <li><a href="https://www.phdassistance.com/services/phd-literature-review/">Literature review</a></li>
+        <li><a href="https://www.phdassistance.com/services/phd-research-methodology/">Research methodology</a></li>
+        <li><a href="https://www.phdassistance.com/services/phd-data-analysis/">Data analysis and AI</a></li>
+        <li><a href="https://www.phdassistance.com/services/editing-services/">Editing and proofreading</a></li>
+        <li><a href="https://www.phdassistance.com/hire-a-phd-research-assistant/">Hire a researcher</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <ul>
+        <li><a href="https://www.phdassistance.com/pricing/">Pricing</a></li>
+        <li><a href="https://www.phdassistance.com/faq/">FAQ</a></li>
+        <li><a href="https://www.phdassistance.com/our-process/">How we work</a></li>
+        <li><a href="https://www.phdassistance.com/our-guarantees/">Our commitments</a></li>
+        <li><a href="https://www.phdassistance.com/contact-us/">Contact us</a></li>
+      </ul>
+    </div>
+    <p class="legal">
+      Copyright © 2026 PhD Assistance. PhD Research Lab is a PhD Assistance brand.
+      <a href="https://www.phdassistance.com/privacy-policy/">Privacy Policy</a> /
+      <a href="https://www.phdassistance.com/terms-and-conditions/">Terms and Conditions</a> /
+      <a href="https://www.phdassistance.com/cookie-policy/">Cookie Policy</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+/* ==============================================================
+   SAMPLING FIELD
+   160 cases in three groups. Each method picks n of them.
+   ============================================================== */
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  var svg = document.getElementById('field');
+  var dotsG = document.getElementById('dots');
+  var clG = document.getElementById('clusters');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function mulberry(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function shuffle(arr, rng) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(rng() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  /* ---- population: 16 columns x 10 rows ---- */
+  var COLS = 16, ROWS = 10, layout = mulberry(7), pop = [];
+  for (var r = 0; r < ROWS; r++) {
+    for (var c = 0; c < COLS; c++) {
+      var s = c <= 6 ? 0 : (c <= 11 ? 1 : 2);
+      // "richness" is higher in Group B, so purposive picks lean there
+      var rich = layout() * 0.6 + (s === 1 ? 0.4 : 0);
+      pop.push({
+        i: pop.length, c: c, r: r, s: s,
+        x: 20 + c * 40 + (layout() - 0.5) * 14,
+        y: 30 + r * 40 + (layout() - 0.5) * 14,
+        cl: Math.floor(c / 4) * 2 + Math.floor(r / 5),
+        rich: rich
+      });
+    }
+  }
+  var sizes = [0, 0, 0];
+  pop.forEach(function (p) { sizes[p.s]++; });
+  var names = ['Group A', 'Group B', 'Group C'];
+
+  /* ---- draw static elements ---- */
+  var dotEls = pop.map(function (p) {
+    var el = document.createElementNS(NS, 'circle');
+    el.setAttribute('cx', p.x.toFixed(1));
+    el.setAttribute('cy', p.y.toFixed(1));
+    el.setAttribute('r', 6);
+    el.setAttribute('class', 'dot s' + p.s);
+    dotsG.appendChild(el);
+    return el;
+  });
+  var clEls = [];
+  for (var k = 0; k < 8; k++) {
+    var col = Math.floor(k / 2), row = k % 2;
+    var rect = document.createElementNS(NS, 'rect');
+    rect.setAttribute('x', col * 160 + 5);
+    rect.setAttribute('y', 10 + row * 200 + 5);
+    rect.setAttribute('width', 150);
+    rect.setAttribute('height', 190);
+    rect.setAttribute('rx', 10);
+    rect.setAttribute('class', 'cl');
+    clG.appendChild(rect);
+    clEls.push(rect);
+  }
+
+  /* ---- sampling methods ---- */
+  var methods = {
+    random: {
+      label: 'Simple random', redraw: true,
+      desc: 'Every case has the same chance of being picked.',
+      fits: 'You have a complete list of the population.',
+      watch: 'A small sample can miss a group by chance. Draw again to see it happen.',
+      pick: function (n, rng) { return shuffle(pop, rng).slice(0, n); }
+    },
+    stratified: {
+      label: 'Stratified', redraw: true,
+      desc: 'Split the population into groups, then pick from each group in proportion to its size.',
+      fits: 'Sub-groups matter to your research question.',
+      watch: 'You must know each case’s group before you sample.',
+      pick: function (n, rng) {
+        var total = pop.length;
+        var counts = sizes.map(function (sz) { return Math.floor(n * sz / total); });
+        var rem = n - counts.reduce(function (a, b) { return a + b; }, 0);
+        var frac = sizes.map(function (sz, k) { return { k: k, f: n * sz / total - counts[k] }; })
+                        .sort(function (a, b) { return b.f - a.f; });
+        for (var q = 0; rem > 0; q++, rem--) counts[frac[q % 3].k]++;
+        var out = [];
+        for (var g = 0; g < 3; g++) {
+          out = out.concat(shuffle(pop.filter(function (p) { return p.s === g; }), rng).slice(0, counts[g]));
+        }
+        return out;
+      }
+    },
+    cluster: {
+      label: 'Cluster', redraw: true,
+      desc: 'Pick whole clusters, such as schools, wards or clinics, and include everyone in them. Here the sample grows in steps of 20.',
+      fits: 'No complete list of individuals exists, or travel makes spread-out samples costly.',
+      watch: 'People in a cluster tend to resemble each other, so the sample can lean one way.',
+      pick: function (n, rng) {
+        var count = Math.max(1, Math.round(n / 20));
+        var ids = shuffle([0, 1, 2, 3, 4, 5, 6, 7], rng).slice(0, count);
+        return pop.filter(function (p) { return ids.indexOf(p.cl) > -1; });
+      }
+    },
+    convenience: {
+      label: 'Convenience', redraw: false,
+      desc: 'Take the cases that are easiest to reach. Here, the ones closest to you.',
+      fits: 'Pilot studies and early exploration.',
+      watch: 'It rarely mirrors the population. Say so in your limitations.',
+      pick: function (n) {
+        function d(p) { var dx = p.x - 22, dy = p.y - 392; return dx * dx + dy * dy; }
+        return pop.slice().sort(function (a, b) { return d(a) - d(b); }).slice(0, n);
+      }
+    },
+    purposive: {
+      label: 'Purposive', redraw: false,
+      desc: 'Choose the cases that carry the most information about your question.',
+      fits: 'Qualitative work, where depth matters more than representation.',
+      watch: 'You must be able to justify each selection criterion.',
+      pick: function (n) {
+        return pop.slice().sort(function (a, b) { return b.rich - a.rich; }).slice(0, n);
+      }
+    }
+  };
+  var order = ['random', 'stratified', 'cluster', 'convenience', 'purposive'];
+
+  /* ---- UI ---- */
+  var state = { method: 'random', n: 24, seed: 1 };
+  var btnWrap = document.getElementById('methodBtns');
+  var range = document.getElementById('nRange');
+  var readout = document.getElementById('readout');
+  var redraw = document.getElementById('redraw');
+  var barPop = document.getElementById('barPop');
+  var barSample = document.getElementById('barSample');
+  var insight = document.getElementById('insight');
+  var caption = document.getElementById('caption');
+
+  var btns = order.map(function (key) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = methods[key].label;
+    b.setAttribute('aria-pressed', key === state.method ? 'true' : 'false');
+    b.addEventListener('click', function () { state.method = key; render(); });
+    btnWrap.appendChild(b);
+    return b;
+  });
+
+  range.addEventListener('input', function () { state.n = +range.value; render(); });
+  redraw.addEventListener('click', function () { state.seed++; render(); });
+
+  function setBar(el, counts, total) {
+    el.innerHTML = '';
+    counts.forEach(function (n) {
+      var pct = total ? (n / total) * 100 : 0;
+      var s = document.createElement('span');
+      s.style.width = pct + '%';
+      s.textContent = pct >= 12 ? Math.round(pct) + '%' : '';
+      el.appendChild(s);
+    });
+  }
+  setBar(barPop, sizes, pop.length);
+
+  function render() {
+    var m = methods[state.method];
+    var rng = mulberry(state.seed * 7919 + 13);
+    var picks = m.pick(state.n, rng);
+    var picked = {};
+    picks.forEach(function (p, idx) { picked[p.i] = idx; });
+
+    // dots
+    dotEls.forEach(function (el, i) {
+      var on = picked.hasOwnProperty(i);
+      el.classList.toggle('on', on);
+      el.classList.toggle('ring', on && state.method === 'purposive');
+      el.style.transitionDelay = (on && !reduce) ? Math.min(picked[i] * 9, 380) + 'ms' : '0ms';
+    });
+
+    // clusters + marker
+    var chosen = {};
+    picks.forEach(function (p) { chosen[p.cl] = true; });
+    clEls.forEach(function (el, i) {
+      el.classList.toggle('on', state.method === 'cluster' && !!chosen[i]);
+    });
+    svg.classList.toggle('show-clusters', state.method === 'cluster');
+    svg.classList.toggle('show-you', state.method === 'convenience');
+
+    // buttons + controls
+    btns.forEach(function (b, i) { b.setAttribute('aria-pressed', order[i] === state.method ? 'true' : 'false'); });
+    redraw.disabled = !m.redraw;
+
+    // readout
+    var total = picks.length;
+    readout.textContent = 'n = ' + total + ' of ' + pop.length + ' (' + Math.round(total / pop.length * 100) + '%)';
+
+    // composition
+    var sc = [0, 0, 0];
+    picks.forEach(function (p) { sc[p.s]++; });
+    setBar(barSample, sc, total);
+
+    var worst = 0, wd = 0;
+    for (var g = 0; g < 3; g++) {
+      var d = Math.abs(sc[g] / total - sizes[g] / pop.length);
+      if (d > wd) { wd = d; worst = g; }
+    }
+    if (wd < 0.08) {
+      insight.textContent = 'This sample mirrors the population closely.';
+    } else {
+      insight.textContent = names[worst] + ' is ' + Math.round(sizes[worst] / pop.length * 100) +
+        '% of the population and ' + Math.round(sc[worst] / total * 100) + '% of this sample.';
+    }
+
+    // caption
+    caption.innerHTML =
+      '<h3>' + m.label + ' sampling</h3>' +
+      '<p>' + m.desc + '</p>' +
+      '<p><b>Fits when</b> ' + m.fits.charAt(0).toLowerCase() + m.fits.slice(1) + '</p>' +
+      '<p><b>Watch for</b> ' + m.watch.charAt(0).toLowerCase() + m.watch.slice(1) + '</p>';
+  }
+
+  render();
+})();
+
+/* ==============================================================
+   REQUEST FORM
+   Opens the visitor's email app with the request filled in.
+   To send to your own backend instead, replace the mailto block
+   with a fetch('/your-endpoint', { method: 'POST', body: new FormData(form) }).
+   ============================================================== */
+(function () {
+  var form = document.getElementById('reqForm');
+  var status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = '';
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    var d = new FormData(form);
+    var lines = [
+      'Name: ' + d.get('name'),
+      'Email: ' + d.get('email'),
+      'Phone or WhatsApp: ' + d.get('phone'),
+      'Country: ' + (d.get('country') || '-'),
+      'Stage: ' + (d.get('stage') || '-'),
+      'Subject: ' + (d.get('subject') || '-'),
+      'Help needed with: ' + (d.get('need') || '-'),
+      '',
+      'About my work:',
+      d.get('work')
+    ];
+    var subject = 'Methodology support request: ' + (d.get('need') || 'General');
+    window.location.href = 'mailto:support@phdassistance.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    status.textContent = 'Thank you. Your email app should open with the request ready to send.';
+  });
+})();
+</script>
+</body>
+</html>
